@@ -1,0 +1,12 @@
+CLR PSW.3  
+CLR PSW.4       
+ MOV R0,#0AH 
+ MOV DPTR,#3000H 
+ MOV B,#00H 
+L1:MOVX A,@DPTR  
+ADD A,B   
+ XCH A,B  
+ INC DPTR  
+ DJNZ R0,L1  
+ MOV A,B
+ END 

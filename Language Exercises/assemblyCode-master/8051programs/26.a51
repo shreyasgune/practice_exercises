@@ -1,0 +1,12 @@
+ MOV R1,#20H 
+ MOV R0,#0AH 
+ MOV B,#00H
+L1:MOV A,@R1
+ ADD A,B
+ MOV B,A
+ INC R1
+ DJNZ R0,L1
+ MOV A,B
+ MOV B,#0AH 
+ DIV AB
+End

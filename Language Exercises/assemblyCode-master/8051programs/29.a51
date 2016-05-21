@@ -1,0 +1,7 @@
+MOV A,B
+RRC A
+RRC A
+RRC A
+RRC A
+MOV B,A
+END

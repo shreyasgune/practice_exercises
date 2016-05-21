@@ -1,0 +1,46 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+<% include ../partials/head %>
+</head>
+
+<body class = "container">
+
+	<header>
+	<% include ../partials/header %>
+	</header>
+
+	<main>
+		<div class="shreyas">
+			<h1> EJS and NodeJS Tutorial</h1>
+			<p>Welcome to templating using EJS</p>
+
+			<h2>Best of Prog</h2>
+			<p> <%= tagline %></p>
+			<p> <%= test %></p>
+
+			<h2>Bandz</h2>
+<ul>
+    <% bands.forEach(function(bands) { %>
+        <li><%= bands.name %> - <%= bands.metalness %></li>
+    <% }); %>
+</ul>
+
+	<h3> <%= member.employees %> </h3>
+
+	<ul>
+		<% member.people.forEach(function(item){ %>
+
+		<li> <%=item.firstName %></li>
+		<% }); %>
+	</ul>
+
+		</div>
+	</main>
+
+	<footer>
+		<% include ../partials/footer %>
+	</footer>
+
+</body>
+</html>

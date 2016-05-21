@@ -1,0 +1,18 @@
+ac analysis of bjt
+vcc 2 0 dc 15
+vs 7 0 ac 0.1
+q1 3 1 4 BC147B
+r1 2 1 10k
+r2 1 0 2.2k
+rc 2 3 1.5k
+re 4 0 12k
+rs 7 6 500OHM
+rl  5 0 10k
+ce 4 0 10UF
+cc 3 5 10UF
+CB 1 6 10UF
+.model BC147B npn((bf=150 rb=100 va=200 tf=.3ns tr=6ns)
+.op
+.end
+
+

@@ -1,0 +1,13 @@
+{
+  "cols": [
+        {"id":"","label":"Jhangers","pattern":"","type":"string"},
+        {"id":"","label":"Jhang Consumption","pattern":"","type":"number"}
+      ],
+  "rows": [
+        {"c":[{"v":"Sid","f":null},{"v":3,"f":null}]},
+        {"c":[{"v":"ShreyasShenuPop","f":null},{"v":1,"f":null}]},
+        {"c":[{"v":"T-Dany","f":null},{"v":1,"f":null}]},
+        {"c":[{"v":"Snig_Chatto","f":null},{"v":1,"f":null}]},
+        {"c":[{"v":"CunalDay","f":null},{"v":2,"f":null}]}
+      ]
+}

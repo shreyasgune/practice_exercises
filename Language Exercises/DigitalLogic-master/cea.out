@@ -1,0 +1,33 @@
+
+**** 04/06/10 10:46:20 *********** Evaluation PSpice (Nov 1999) **************
+
+ VS 7 0 SIN (0 1M 1K)
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+VCC 2 0 DC 15
+RS 7 8 0.1
+R1 2 1 13.16K
+R2 1 0 8.06K
+RC 2 3 500
+RE1 4 5 22.2
+RE2 5 0 472.8
+C1 8 1 10UF
+C2 3 6 10UF
+CE 5 0 10UF
+RL 6 0 50K
+Q1 3 1 4 Q2n2222
+.MODEL Q2n2222 NPN (BF=100 IS=3.29E-14 VA=200)
+.TRAN/OP 2US 1MS
+.PROBE
+.END
+
+ERROR -- Less than 2 connections at node 7
+ERROR -- Node 7 is floating
+ERROR -- Node 8 is floating

@@ -1,0 +1,15 @@
+MOV A,# 92H  
+ MOV B,A 
+ ANL A,#0F0 H  
+ SWAP A 
+ MOV 19H,A 
+ MOV A,B 
+ANL A,#0F H  
+ MOV A,18H  
+ MOV B,19 H 
+ MUL AB 
+ MOV B,#0AH    
+ DIV AB  
+ SWAP A    
+ ORL A,B 
+END

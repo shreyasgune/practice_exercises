@@ -1,0 +1,72 @@
+[
+  {
+    "Band": "Iron Maiden",
+    "Album": "Powerslave",
+    "Year": 1984,
+    "img": "http://i.ebayimg.com/images/i/221786154471-0-1/s-l1000.jpg",
+    "": "https://www.youtube.com/watch?v=meNeY0iDs_I"
+  },
+  {
+    "Band": "Opeth",
+    "Album": "Blackwater Park",
+    "Year": 2001,
+    "img": "http://www.ultimatemetal.com/wp-content/uploads/2001/09/cov-opeth-blackwaterpark.jpg",
+    "": "https://www.youtube.com/watch?v=N1vU30GtY-M"
+  },
+  {
+    "Band": "Radiohead",
+    "Album": "OK Computer",
+    "Year": 1997,
+    "img": "http://thealbumlist.com/wp-content/uploads/2014/08/ok-computer.jpg",
+    "": "https://www.youtube.com/watch?v=5GMbEdKk5vM"
+  },
+  {
+    "Band": "System of a Down",
+    "Album": "Toxicity",
+    "Year": 2001,
+    "img": "https://s3.amazonaws.com/images.sheetmusicdirect.com/Album/929ab33e-0e04-4c81-8027-b456b2c9ed4f/large.jpg",
+    "": "https://www.youtube.com/watch?v=A3tU_ko6s5g"
+  },
+  {
+    "Band": "Ghost",
+    "Album": "Meliora",
+    "Year": 2015,
+    "img": "http://metalinvader.net/wp-content/uploads/2015/08/meliora.jpg",
+    "": "https://www.youtube.com/watch?v=CzzkemzfdfU"
+  },
+  {
+    "Band": "Between The Buried and Me",
+    "Album": "Parallax II",
+    "Year": 2012,
+    "img": "http://musicconnection.com/wp-content/uploads/2012/11/Between-the-Buried-and-Me-parallax-ii.jpeg",
+    "": "https://www.youtube.com/watch?v=EXtFSOPFS8k"
+  },
+  {
+    "Band": "Karnivool",
+    "Album": "Sound Awake",
+    "Year": 2005,
+    "img": "http://ecx.images-amazon.com/images/I/61VE1e5Ig4L.jpg",
+    "": "https://www.youtube.com/watch?v=FeohN5JMeYY"
+  },
+  {
+    "Band": "Ensiferum",
+    "Album": "Iron",
+    "Year": 2003,
+    "img": "http://inches.skyfall.info/wp-content/uploads/2013/04/00-Ensiferum-Iron-2004.jpg",
+    "": "https://www.youtube.com/watch?v=9_di4ClGkq8"
+  },
+  {
+    "Band": "The Mars Volta",
+    "Album": "De-loused In The Comatorium",
+    "Year": 2003,
+    "img": "http://cdn.albumoftheyear.org/album/de-loused-in-the-comatorium.jpg",
+    "": "https://www.youtube.com/watch?v=Zgjv0PQiJCs"
+  },
+  {
+    "Band": "Megadeth",
+    "Album": "Rust In Peace",
+    "Year": 1990,
+    "img": "http://www.chimesdesign.com/blog/wp-content/uploads/2012/11/Rust+In+Peace+Remaster+Megadeth++Rust+in+peace.jpeg",
+    "": "https://www.youtube.com/watch?v=sU5Wg4q9fEY"
+  }
+]

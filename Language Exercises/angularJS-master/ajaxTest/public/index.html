@@ -1,0 +1,124 @@
+<html>
+   <head>
+      <title>Shreyas does some Ajax Calls on Angular JS/Rails Server</title>
+      
+            <style type="text/css">
+
+            h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+
+            h2 { color: #111; font-family: Century Gothic, sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; }
+
+            body {
+               background-color:#FFCC00;
+            }
+
+            button {
+               color: #111; 
+               background-color:#FFCC00; 
+               font-family: 'Open Sans', 
+               sans-serif; 
+               font-size: 30px; 
+               font-weight: 300; 
+               line-height: 32px; 
+               margin: 0 0 72px; 
+               text-align: center;
+               margin-left:auto;
+               margin-right:auto;
+               display:block;
+               margin-top:5%;
+               margin-bottom:0%
+              
+            }
+
+            table.guneTable {
+               font-family: Century Gothic, sans-serif;
+               font-size:16px;
+               color:#333333;
+               border-width: 1px;
+               border-color: #999999;
+               border-collapse: collapse;
+               
+            }
+            table.guneTable th {
+               background-color:#c3dde0;
+               border-width: 1px;
+               padding: 8px;
+               border-style: solid;
+               border-color: #a9c6c9;
+            }
+            table.guneTable tr {
+               background-color:#d4e3e5;
+            }
+            table.guneTable td {
+               border-width: 1px;
+               padding: 8px;
+               border-style: solid;
+               border-color: #a9c6c9;
+            }
+            </style>
+      
+   </head>
+   <body>
+   </br>
+   </br>
+      <h1>AngularJS based Ajax Calls to JSON data hosted on Rails Server</h1>
+	  <h2>Shreyas Gune 2016. Best Bands. Best Music. Nothing More. Nothing Less.</h2>
+      <!--- 
+	  <h2>Shreyas Gune 2016. Check out my github for source code: <a href="https://github.com/shreyasgune/angularJS/tree/master/ajaxTest"> here</a></h2> -->
+      
+
+      <div ng-app = "" ng-controller = "guneController">
+
+         <button ng-click = "clicked = true" align="center"  >Reveal The Albums of Life</button>
+      </br>
+      </br>
+
+         <div ng-show = "clicked">
+      
+         <table class = "guneTable" align="center" >
+            <tr>
+				<th>Album Art</th>
+               <th>Band</th>
+               <th>Album</th>
+               <th>Year</th>
+			   <th>Listen</th>
+            </tr>
+         
+            <tr ng-repeat = "student in gunez" onmouseover = " this.style.backgroundColor='#ffff66';" onmouseout= " this.style.backgroundColor='#d4e3e5' ">
+
+             
+			   <td> <img src = "{{student.img}} "></td>
+               <td>{{ student.Band }}</td>
+               <td>{{ student.Album }}</td>
+               <td>{{ student.Year }}</td>
+			   <td> <a href = "{{student.listen}}">Listen Now</a>
+            </tr>
+         </table>
+      </div>
+
+      </div>
+      
+      <script>
+      
+       function myFunction(){
+         document.getElementById("tablez");
+       }
+
+
+
+         function guneController($scope,$http) {
+            
+         
+            $http.get("data.json").success( function(response) {
+               $scope.gunez = response;
+               $scope.clicked = false;
+            });
+         }
+      </script>
+      
+      <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+      
+   </body>
+</html>
+

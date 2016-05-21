@@ -1,0 +1,14 @@
+== README
+
+A simple enough app to click a button and do an AJAX call to a JSON file hosted on your Rails server.
+
+Steps : 
+
+run the rails server. 
+go to the index page. 
+click the button.
+
+Read all the source code. Everything is opensource so go nuts over it.
+
+
+<tt>rake doc:app</tt>.

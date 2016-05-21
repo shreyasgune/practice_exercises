@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NDS Mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" sizes="196x196" href="images/appicon.png">
+    <link rel="shortcut icon" sizes="128x128" href="images/appicon-128.png">
+
+    <!--Making the web app have a more native look on Safari when added to Home Screen-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="images/appicon.png">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script>google.load("visualization", "1", { packages: ["geochart", "corechart", "table", "controls"] });</script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="js/ndsmobile.js"></script>
+    <script src="js/markerclusterer_compiled.js"></script>
+    <link rel="stylesheet" href="css/ndsmobile.css" />
+</head>
+<body>
+    <div id="panelMenuLeft" data-role="panel" data-position="left" data-display="overlay" data-theme="b">
+        <p id="menuTitle" style="font-size: x-large">MENU</p>
+    </div>
+
+    <div id="panelMenuRight" data-role="panel" data-position="right" data-display="overlay" data-theme="b">
+        <p style="font-size: x-large">MENU</p>
+        <ul data-role="listview">
+            <li data-icon="home"><a href="#mainPage" data-transition="pop" data-direction="reverse">Home</a></li>
+            <li data-icon="refresh"><a href="#" onclick="refreshData()">Refresh Data</a></li>
+            <li data-icon="power"><a href="#" onclick="logOut()">Logout</a></li>
+        </ul>
+    </div>
+
+    <div data-role="header">
+        <h1 id="pageTitle"></h1>
+        <a id="panelMenuButton" href="#panelMenuLeft" class="ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"></a>
+        <a id="optionsButton" href="#panelMenuRight" class="ui-btn-right ui-btn ui-icon-gear ui-btn-icon-notext ui-corner-all"></a>
+        <div data-role="popup" id="searchPopup" class="ui-corner-all" data-overlay-theme="b" data-theme="a">
+            <div style="padding:10px 20px;">
+                <input id="sitenameInput" data-type="search" placeholder="Site Name" />
+                <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-b" onclick="findMarker()">Search</a>
+            </div>
+        </div>
+        <div style="background-image:url(images/ericsson-hr.jpg); background-size:contain; height:3px">&nbsp;</div>
+    </div>
+
+    <div id="loginPage" data-role="page">
+        <div role="main" class="ui-content MainContainer">
+            <div style="text-align: center;">
+                <img id="logo" src="images/logo.png" style="margin-top: 2em; max-width:50%; max-height:50%" />
+            </div>
+            <input type="email" name="username" id="username" placeholder="Username" />
+            <input type="password" name="password" id="password" placeholder="Password" />
+            <input type="submit" id="submitButton" value="Login" onclick="checkLogin()" />
+        </div>
+    </div>
+
+    <div id="mainPage" data-role="page">
+        <div role="main" class="ui-content MainContainer">
+            <div class="ui-grid-a ui-responsive">
+                <div class="ui-block-a">
+                    <div id="sitesMapCard" class="card" style="background-image:url(images/sites.png); background-size:cover;" onclick="cardClicked('sitesMapPage')">
+                        <h1>Sites Map</h1>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div id="marketStatusCard" class="card" style="background-image:url(images/charts.png); background-size:cover;" onclick="cardClicked('marketRegionsPage')">
+                        <h1>Market Status</h1>
+                    </div>
+                </div>
+                <div class="ui-block-a">
+                    <div id="nationalStatusCard" class="card" style="background-image:url(images/health.png); background-size:cover;" onclick="cardClicked('nationalStatusPage')">
+                        <h1>Nation-wide Status</h1>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div id="reportsCard" class="card" style="background-image:url(images/reports.png); background-size:cover;" onclick="cardClicked('reportsPage')">
+                        <h1>Full Reports</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sitesMapPage" data-role="page">
+        <div id="sites_map_container" role="main" class="ui-content MainContainer" style="padding:0em;"></div>
+    </div>
+
+    <div id="siteDetailsPage" data-role="page">
+        <div id="site_details_container" role="main" class="ui-content MainContainer"></div>
+    </div>
+
+    <div id="marketRegionsPage" data-role="page">
+        <div role="main" class="ui-content" style="padding:0em;">
+            <div id="market_regions_tooltip" class="ui-body ui-body-a ui-corner-all" style="float:right; margin:2em; display:none">Tap region to see details</div>
+            <div id="market_regions_container" class="MainContainer"></div>
+            <div style="text-align:center">
+                <span style="color:purple">West</span>
+                <span style="color:red">South Central</span>
+                <span style="color:darkgreen">North Central</span>
+                <span style="color:blue">South East</span>
+                <span style="color:orange">North East</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="marketPage" data-role="page">
+        <div role="main" class="ui-content" style="padding:0em">
+            <div id="market_tooltip" class="ui-body ui-body-a ui-corner-all" style="float:right; margin:2em; display:none">Tap bar to see details</div>
+            <div id="market_container" class="MainContainer"></div>
+            <form style="text-align:center">
+                <fieldset id="market_date_radio_fieldset" data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <input type="radio" name="market_date_radio" id="market_date_range1" value="1" checked="checked" onclick="marketDateChanged('1')" />
+                    <label for="market_date_range1">1 Day</label>
+                    <input type="radio" name="market_date_radio" id="market_date_range7" value="7" onclick="marketDateChanged('7')" />
+                    <label for="market_date_range7">7 Days</label>
+                    <input type="radio" name="market_date_radio" id="market_date_range30" value="30" onclick="marketDateChanged('30')" />
+                    <label for="market_date_range30">30 Days</label>
+                    <input type="radio" name="market_date_radio" id="market_date_range120" value="120" onclick="marketDateChanged('120')" />
+                    <label for="market_date_range120">120 Days</label>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div id="marketDetailsPage" data-role="page">
+        <div id="market_details_container" role="main" class="ui-content MainContainer" style="padding:0em"></div>
+    </div>
+
+    <div id="nationalStatusPage" data-role="page">
+        <div role="main" class="ui-content" style="padding:0em">
+            <div id="national_status_container" class="MainContainer"></div>
+            <div style="margin-left:2em">
+                <span>*Number of RF Not Ready sites in Region over the past 7 days</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="reportsPage" data-role="page">
+        <div id="reports_container" role="main" class="ui-content MainContainer" style="padding:0em"></div>
+    </div>
+
+</body>
+</html>

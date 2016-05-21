@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html ng-app="demoApp">
+<head>
+	<title> Using AngularJS Directives and Data binding</title>
+</head>
+
+<body>
+	<script type="text/javascript" src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+	<div ng-view=""></div>
+
+	<div ng-app="">
+	Name:
+	<input type="text" ng-model='nome'/>{{  nome }}
+	</div>
+
+	<div ng-app="" ng-init = "names=[{name:'Dave Murray',plays: 'Guitars'},{name:'Adrian Smith',plays:'Guitar'},{name:'Bruce Dickinson',plays:'Vocals'},{name:'Steve Harris',plays:'Bass'},{name:'Nicko McBrain',plays:'Drums'},{name:'Janick Gers',plays:'Guitars'}]"  >
+		<h3>Looping with ng-repeat Directive</h3>
+		<ul>
+		    <li ng-repeat = "name in names"> {{ name }} </li>
+		    <br/>
+		    UPPER CASE IRON MAIDEN
+
+		    <br></br>
+		    <li ng-repeat = "eddie in names"> {{ eddie.name |uppercase }}</li>
+		    <br></br>
+		    <li ng-repeat="eddie in names"> {{eddie.name}} - {{eddie.plays}} </li>
+
+		    <br></br>
+		    <input type="text" ng-model='naame'/>
+
+		    <li ng-repeat = "eddie in names | filter:naame">{{eddie.name}}-{{eddie.plays}}
+		</ul>
+	</div>
+
+	<div  ng-controller="SimpleController">
+
+		<script type="text/javascript">
+
+		var demoApp = angular.module('demoApp', ['ngRoute']);
+		demoApp.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+            .when('/view1', {
+                templateUrl: 'Partials/view1.html',
+                controller: 'SimpleController'
+            })
+            .when('/view2', {
+                templateUrl: 'Partials/view2.html',
+                controller: 'SimpleController'
+            })
+            .otherwise({ redirectTo: '/' });
+		}]);    							
+
+
+
+		    function SimpleController($scope,simpleFactory){
+				$scope.members = [
+				{name:'Dave Murray',plays: 'Guitars'},
+				{name:'Adrian Smith',plays:'Guitars'},
+				{name:'Bruce Dickinson',plays:'Vocals'},
+				{name:'Steve Harris',plays:'Bass'},
+				{name:'Nicko McBrain',plays:'Drums'},
+				{name:'Janick Gers',plays:'Guitars'}
+
+				];
+
+				function init(){
+					$scope.members = simpleFactory.getMembers();
+				}
+				$scope.addMember = function(){
+					$scope.members.push({
+					//name: $scope.maidenMember.name,
+					plays: $scope.maidenMember.plays
+					});
+					
+				};
+			}
+
+			demoApp.factory('simpleFactory', function(){
+				var members = [
+				{name:'Dave Murray',plays: 'Guitars'},
+				{name:'Adrian Smith',plays:'Guitars'},
+				{name:'Bruce Dickinson',plays:'Vocals'},
+				{name:'Steve Harris',plays:'Bass'},
+				{name:'Nicko McBrain',plays:'Drums'},
+				{name:'Janick Gers',plays:'Guitars'}
+				];
+
+				var factory = {};
+				factory.getMembers = function(){
+					return members;
+				};
+				factory.putMembers = function(members){
+
+				};
+			})
+
+
+			demoApp.controller('SimpleController',SimpleController);
+
+		    </script>
+
+
+		    <ul>
+		    	<br></br>
+		    	USING CONTROLLERS
+		        <li ng-repeat="eddie in members"> {{eddie.name}} - {{eddie.plays}} </li>
+		    </ul>
+		    <br/>
+
+		    <a href="Partials/view1.html">View 1</a>
+		    <a href="Partials/test.html">Test</a>
+		    
+
+	</div>
+	
+
+</body>
+</html>

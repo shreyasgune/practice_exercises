@@ -1,0 +1,18 @@
+@font-face {
+    font-family: Ericsson;
+    src: url('ericssoncapitaltt-webfont.svg') format('svg'), url('ericssoncapitaltt-webfont.woff') format('woff');
+}
+
+body {
+    font-family: 'Times New Roman';
+}
+
+.card {
+    padding: 2em;
+    border: 5px solid #F9F9F9;
+    cursor: pointer;
+}
+
+.ui-panel {
+    opacity: 0.95;
+}

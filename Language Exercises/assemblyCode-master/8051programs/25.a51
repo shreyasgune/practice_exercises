@@ -1,0 +1,18 @@
+ CLR  PSW.3 
+ CLR  PSW.4       
+ MOV  R0, # 20 H 
+ MOV  R1, # 25 H 
+ MOV  A, R2
+ ADD  A, R0
+ MOV  R0, A
+ MOV  A, R2
+ ADD  A, R1
+ MOV  R1, A
+ DEC  R0
+ DEC  R1
+L1:MOV A,@R0 
+ MOV @R1,A 
+ DEC  R0
+ DEC  R1
+ DJNZ  R2, L1
+END

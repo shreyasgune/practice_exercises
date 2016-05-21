@@ -1,0 +1,11 @@
+dc analysis of bjt
+vcc 2 0 dc 15
+r2 1 0 8.2k
+r1 2 1 13.16k
+rc 2 3 500
+re 4 0 495
+q1 3 1 4 BC1047B
+
+.model BC1047B npn((bf=150 rb=100 va=200 tf=.3ns tr=6ns)
+.op
+.end

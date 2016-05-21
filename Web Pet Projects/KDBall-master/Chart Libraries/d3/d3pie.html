@@ -1,0 +1,119 @@
+<html>
+<head></head>
+<body>
+
+<div id="pieChart"></div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.4/d3.min.js"></script>
+<script src="d3pie.min.js"></script>
+<script>
+var pie = new d3pie("pieChart", {
+	"header": {
+		"title": {
+			"text": "Ericsson  Chart Tool",
+			"fontSize": 24,
+			"font": "open sans"
+		},
+		"subtitle": {
+			"text": "A full pie chart to show off label collision detection and resolution.",
+			"color": "#999999",
+			"fontSize": 12,
+			"font": "open sans"
+		},
+		"titleSubtitlePadding": 9
+	},
+	"footer": {
+		"text": "@shreyas_gune",
+		"color": "#999999",
+		"fontSize": 10,
+		"font": "open sans",
+		"location": "bottom-left"
+	},
+	"size": {
+		"canvasWidth": 624,
+		"pieInnerRadius": "48%",
+		"pieOuterRadius": "82%"
+	},
+	"data": {
+		"sortOrder": "value-desc",
+		"smallSegmentGrouping": {
+			"enabled": true,
+			"valueType": "value"
+		},
+		"content": [
+			{
+				"label": "Professional Services",
+				"value": 264131,
+				"color": "#2484c1"
+			},
+			{
+				"label": "AT&T CU",
+				"value": 218812,
+				"color": "#0da1ff"
+			},
+			{
+				"label": "BAMA",
+				"value": 157618,
+				"color": "#4daa4b"
+			},
+			{
+				"label": "System Engineering",
+				"value": 114384,
+				"color": "#e1e06a"
+			},
+			{
+				"label": "Tuning and Optimization",
+				"value": 95002,
+				"color": "#7b41e6"
+			},
+			{
+				"label": "Engagement Practices",
+				"value": 78327,
+				"color": "#e44a8f"
+			}
+		]
+	},
+	"labels": {
+		"outer": {
+			"pieDistance": 32
+		},
+		"inner": {
+			"hideWhenLessThanPercentage": 3
+		},
+		"mainLabel": {
+			"fontSize": 11
+		},
+		"percentage": {
+			"color": "#ffffff",
+			"decimalPlaces": 0
+		},
+		"value": {
+			"color": "#adadad",
+			"fontSize": 11
+		},
+		"lines": {
+			"enabled": true
+		}
+	},
+	"effects": {
+		"load": {
+			"speed": 1040
+		},
+		"pullOutSegmentOnClick": {
+			"effect": "linear",
+			"speed": 600,
+			"size": 8
+		}
+	},
+	"misc": {
+		"gradient": {
+			"enabled": true,
+			"percentage": 100
+		}
+	},
+	"callbacks": {}
+});
+</script>
+
+</body>
+</html>
