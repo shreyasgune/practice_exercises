@@ -1,4 +1,0 @@
- MOV A,#12H
- MOV B,A
- MUL AB
- END
