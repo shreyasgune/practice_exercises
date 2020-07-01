@@ -1,4 +1,0 @@
-MOV A,#67H 
-ANL A,#0FH  
-MOV B,A
-END
