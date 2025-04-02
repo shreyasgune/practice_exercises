@@ -1,0 +1,123 @@
+
+**** 03/31/10 16:26:18 *********** Evaluation PSpice (Nov 1999) **************
+
+ dc analysis of bjt
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+vcc 2 0 dc 15
+r2 1 0 8.2k
+r1 2 1 13.16k
+rc 2 3 500
+re 4 0 495
+q1 3 1 4 BC1047B
+
+.model BC1047B npn((bf=150 rb=100 va=200 tf=.3ns tr=6ns)
+.op
+.end
+
+**** 03/31/10 16:26:18 *********** Evaluation PSpice (Nov 1999) **************
+
+ dc analysis of bjt
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               BC1047B         
+               NPN             
+          IS  100.000000E-18 
+          BF  150            
+          NF    1            
+         VAF  200            
+          BR    1            
+          NR    1            
+          RB  100            
+          TF  300.000000E-12 
+          TR    6.000000E-09 
+          CN    2.42         
+           D     .87         
+
+
+**** 03/31/10 16:26:18 *********** Evaluation PSpice (Nov 1999) **************
+
+ dc analysis of bjt
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    5.4538  (    2)   15.0000  (    3)   10.3670  (    4)    4.6166  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    vcc         -9.992E-03
+
+    TOTAL POWER DISSIPATION   1.50E-01  WATTS
+
+
+**** 03/31/10 16:26:18 *********** Evaluation PSpice (Nov 1999) **************
+
+ dc analysis of bjt
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         q1        
+MODEL        BC1047B   
+IB           6.03E-05 
+IC           9.27E-03 
+VBE          8.37E-01 
+VBC         -4.91E+00 
+VCE          5.75E+00 
+BETADC       1.54E+02 
+GM           3.58E-01 
+RPI          4.29E+02 
+RX           1.00E+02 
+RO           2.21E+04 
+CBE          1.07E-10 
+CBC          6.00E-21 
+CJS          0.00E+00 
+BETAAC       1.54E+02 
+CBX/CBX2     0.00E+00 
+FT/FT2       5.30E+08 
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

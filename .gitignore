@@ -64,7 +64,6 @@ build/
 
 # Java #
 #######
-*.class
 *.jar
 *.war
 target/
@@ -73,7 +72,6 @@ target/
 #####
 *.exe
 *.test
-*.out
 
 # C/C++ #
 ########
@@ -100,7 +98,6 @@ target/
 
 # Logs and Databases #
 ######################
-*.log
 *.sql
 *.sqlite
 *.sqlite3
