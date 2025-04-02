@@ -1,0 +1,127 @@
+# OS generated files #
+#######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and Editor files #
+########################
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~
+
+# Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sdf
+ipch/
+obj/
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/
+_ReSharper*/
+
+# Node.js #
+###########
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json # Consider if you want to commit this or not.
+
+# Python #
+#########
+__pycache__/
+*.pyc
+*.pyd
+.mypy_cache/
+.pytest_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Java #
+#######
+*.jar
+*.war
+target/
+
+# Go #
+#####
+*.exe
+*.test
+
+# C/C++ #
+########
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.obj
+*.ncb
+*.opensdf
+*.sdf
+*.pch
+
+# macOS #
+#########
+.AppleDouble
+.LSOverride
+
+# Logs and Databases #
+######################
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.backup
+
+# Archives #
+############
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# Temporary files #
+###################
+*.tmp
+*.temp
+*~
+# Ignore files that are created by the system
+desktop.ini
+
+# Other #
+#########
+.env # Environment variables (very important to ignore!)
+.env.* # Environment variables (very important to ignore!)
