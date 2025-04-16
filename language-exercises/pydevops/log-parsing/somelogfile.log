@@ -1,0 +1,10 @@
+127.0.0.1 - rj [13/Nov/2019:14:43:30] "GET HTTP/1.0" 200
+192.168.1.10 - - [13/Nov/2019:14:45:12] "POST /api/login HTTP/1.1" 201
+10.0.0.5 - admin [13/Nov/2019:14:46:02] "GET /nonexistent/page.html HTTP/1.1" 404
+127.0.0.1 - rj [13/Nov/2019:15:01:55] "HEAD /index.html HTTP/1.0" 200
+172.16.3.20 - - [13/Nov/2019:15:05:30] "GET /admin/config HTTP/1.1" 500
+198.51.100.8 - - [13/Nov/2019:15:10:11] "GET /old-page HTTP/1.1" 301
+127.0.0.1 - guest [14/Nov/2019:09:15:00] "GET /images/logo.png HTTP/1.1" 200
+192.168.1.55 - - [14/Nov/2019:09:18:22] "GET /restricted/area HTTP/1.1" 403
+127.0.0.1 - rj [14/Nov/2019:10:00:01] "GET HTTP/1.0" 304
+10.1.1.2 - apiuser [14/Nov/2019:10:05:45] "POST /submit/data HTTP/1.1" 200
