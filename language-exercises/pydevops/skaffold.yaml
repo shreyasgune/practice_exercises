@@ -1,0 +1,15 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+metadata:
+  name: gman-python
+build:
+  artifacts:
+    - image: gman-python
+      context: .
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: false
+# manifests:
+#   rawYaml:
+#     - k8s/deployment.yaml  # optional, for full k8s deploy; can be omitted
